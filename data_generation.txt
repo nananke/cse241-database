@@ -1,0 +1,7 @@
+For this final project, I do the following steps for data generation:
+1. Online Data generation from website https://www.generatedata.com/
+This website help can generate incremental count int, which I use to insert my primary key columns(in order to prevent duplicate). This website can also automatically generate boolean, for example (saving|checking), each account will be assigned with an attribute in the boolean.
+
+2. For many to many or one to many relationship tables, such as own_account, I wrote the JDBC code to random generate pairs(customer_id, account_id); However, I did saw the instruction "we have to review data generation code" before I delete my code. Data generation code is irrelevant with bank interface code, in order to ensure code cleanness, I delete them after finish my final project. 
+But I could explain what I did:
+To make own_account table, I select every customer_id from customer_info table, and select every account_id from account_info. And use java math.random to generate a pair (customer_id, math.random.account_id); I put customer_id at first place since a customer may do not have a account, but a account mush have its owner or owners.
